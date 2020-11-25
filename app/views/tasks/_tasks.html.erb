@@ -14,7 +14,8 @@
         </div>
         <div>
           <% if current_user == task.user %>
-            <%= link_to "Delete", task, method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to 'タスク詳細', task, class: 'btn btn-secondary btn-sm' %>
+            <%= link_to "タスク削除", task, method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: 'btn btn-danger btn-sm' %>
           <% end %>
         </div>
       </div>
@@ -22,3 +23,7 @@
   <% end %>
   <% paginate tasks %>
 </ul>
+
+<div>
+  <%= link_to '新規タスクの登録', new_task_path, class: 'btn btn-primary' %>
+</div>
