@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
   private
 
   def require_user_logged_in
+    # もしユーザがログインしていなければ
     unless logged_in?
+      # ログイン画面にリダイレクトする
       redirect_to login_url
     end
   end
